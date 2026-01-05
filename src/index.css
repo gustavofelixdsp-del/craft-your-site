@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,74 +6,78 @@
 
 @layer base {
   :root {
-    --background: 220 4% 14%;
-    --background-medium: 240 4% 14%;
+    --background: 220 10% 8%;
+    --background-medium: 220 8% 12%;
     --foreground: 0 0% 100%;
 
-    --card: 220 7% 15%;
+    --card: 220 10% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 220 7% 15%;
+    --popover: 220 10% 12%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 83 100% 67%;
-    --primary-foreground: 220 4% 14%;
+    --primary: 350 75% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 135 96% 85%;
-    --secondary-foreground: 220 4% 14%;
+    --secondary: 215 25% 35%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 7% 15%;
-    --muted-foreground: 216 7% 70%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 45 100% 49%;
-    --accent-foreground: 220 4% 14%;
+    --accent: 350 75% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 100% 67%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 23%;
-    --input: 0 0% 23%;
-    --ring: 83 100% 67%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 350 75% 50%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    --surface: 220 7% 16%;
-    --divider: 0 0% 23%;
+    --surface: 220 10% 14%;
+    --divider: 220 10% 22%;
 
-    --glow-primary: 0 0 24px 4px hsla(83, 100%, 67%, 0.2);
-    --glow-card: 0 4px 32px 0 hsla(83, 100%, 67%, 0.13);
-    --glow-strong: 0 8px 36px 0 hsla(83, 100%, 67%, 0.45);
+    --gray-dark: 215 25% 35%;
+    --gray-medium: 220 10% 50%;
+    --gray-light: 220 10% 75%;
+
+    --glow-primary: 0 0 40px 8px hsla(350, 75%, 50%, 0.15);
+    --glow-card: 0 4px 32px 0 hsla(350, 75%, 50%, 0.08);
+    --glow-strong: 0 8px 48px 0 hsla(350, 75%, 50%, 0.25);
   }
 
   .dark {
-    --background: 220 4% 14%;
-    --background-medium: 240 4% 14%;
+    --background: 220 10% 8%;
+    --background-medium: 220 8% 12%;
     --foreground: 0 0% 100%;
 
-    --card: 220 7% 15%;
+    --card: 220 10% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 220 7% 15%;
+    --popover: 220 10% 12%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 83 100% 67%;
-    --primary-foreground: 220 4% 14%;
+    --primary: 350 75% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 135 96% 85%;
-    --secondary-foreground: 220 4% 14%;
+    --secondary: 215 25% 35%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 7% 15%;
-    --muted-foreground: 216 7% 70%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 45 100% 49%;
-    --accent-foreground: 220 4% 14%;
+    --accent: 350 75% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 100% 67%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 23%;
-    --input: 0 0% 23%;
-    --ring: 83 100% 67%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 350 75% 50%;
   }
 }
 
@@ -88,47 +92,61 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-bold tracking-tight leading-tight text-foreground;
-    letter-spacing: -1.4px;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-foreground;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl font-bold text-primary;
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-foreground;
+    font-family: 'Playfair Display', serif;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold text-secondary;
+    @apply text-xl md:text-2xl font-semibold text-foreground;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 
   .glow-primary {
-    box-shadow: 0 0 24px 4px hsla(83, 100%, 67%, 0.2);
+    box-shadow: 0 0 40px 8px hsla(350, 75%, 50%, 0.15);
   }
 
   .glow-card {
-    box-shadow: 0 4px 32px 0 hsla(83, 100%, 67%, 0.13);
+    box-shadow: 0 4px 32px 0 hsla(350, 75%, 50%, 0.08);
   }
 
   .glow-strong {
-    box-shadow: 0 8px 36px 0 hsla(83, 100%, 67%, 0.45);
+    box-shadow: 0 8px 48px 0 hsla(350, 75%, 50%, 0.25);
   }
 
   .hero-gradient {
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, hsla(83, 100%, 67%, 0.15) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 50% 0%, hsla(135, 96%, 85%, 0.08) 0%, transparent 50%),
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, hsla(350, 75%, 50%, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 20%, hsla(215, 25%, 35%, 0.08) 0%, transparent 50%),
                 hsl(var(--background));
   }
 
   .glass {
-    @apply bg-background/80 backdrop-blur-md;
+    @apply bg-background/90 backdrop-blur-xl border border-border/50;
   }
 
   .container-custom {
-    @apply max-w-[1200px] mx-auto px-6 md:px-8;
+    @apply max-w-[1280px] mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsla(350,75%,50%,0.15)];
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }

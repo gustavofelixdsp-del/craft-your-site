@@ -1,18 +1,24 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import DataSection from "@/components/DataSection";
-import Footer from "@/components/Footer";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Solutions from '@/components/Solutions';
+import RFGroup from '@/components/RFGroup';
+import Differentials from '@/components/Differentials';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <Features />
-      <DataSection />
+      <About />
+      <Solutions />
+      <RFGroup />
+      <Differentials />
+      <Contact />
       <Footer />
-    </main>
+    </div>
   );
 };
 
